@@ -1,0 +1,33 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: PRODUCTSERVICE  # Application name
+
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521:xe  # Oracle connection URL
+    username: system  # Oracle username
+    password: system  # Oracle password
+    driver-class-name: oracle.jdbc.OracleDriver  # JDBC Driver class name
+
+  jpa:
+    show-sql: true  # Enable SQL query logging
+    hibernate:
+      ddl-auto: update  # Define Hibernate DDL strate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.OracleDialect  # Set Hibernate dialect for Oracle
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant-path-matcher  # MVC path matching strategy
+#
+#eureka:
+#  client:
+#    fetch-registry: true
+#    register-with-eureka: true
+#    service-url:
+#      defaultzone: http://localhost:8761/eureka
+#      instance:
+#        prefer-ip-address

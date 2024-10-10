@@ -1,0 +1,12 @@
+server:
+  port: 9090
+
+spring:
+  application:
+    name: CloudConfig
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Prasadsangam93/ProductOrderCloudServer
+          clone-on-start: true
