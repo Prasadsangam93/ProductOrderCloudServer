@@ -1,0 +1,25 @@
+server:
+  port: 8092
+
+spring:
+  application:
+    name: PAYMENTSERVICE  # Application name
+
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521:xe  # Oracle connection URL
+    username: system  # Oracle username
+    password: system  # Oracle password
+    driver-class-name: oracle.jdbc.OracleDriver  # JDBC Driver class name
+
+  jpa:
+    show-sql: true  # Enable SQL query logging
+    hibernate:
+      ddl-auto: update  # Define Hibernate DDL strategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.OracleDialect  # Set Hibernate dialect for Oracle
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant-path-matcher  # MVC path matching strategy
+

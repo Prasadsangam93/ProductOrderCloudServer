@@ -5,6 +5,7 @@ import com.microservice.ProductService.entity.Product;
 import com.microservice.ProductService.exception.ProductServiceException;
 import com.microservice.ProductService.model.ErrorResponse;
 import com.microservice.ProductService.model.ProductRequest;
+import com.microservice.ProductService.model.ProductResponse;
 import com.microservice.ProductService.repository.ProductRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,10 +39,10 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public ErrorResponse getProductById(Long productId) throws ProductServiceException {
+    public ProductResponse getProductById(Long productId) throws ProductServiceException {
         Product product= productRepository.findByProductId(productId);
         if (product!=null){
-            ErrorResponse response = new ErrorResponse();
+            ProductResponse response = new ProductResponse();
             response.setProductName(product.getProductName());
             response.setQuantity(product.getQuantity());
             response.setPrice(product.getPrice());

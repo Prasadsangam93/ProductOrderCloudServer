@@ -8,5 +8,8 @@ public interface OrderService {
 
     Map<String, Object> placeOrder(OrderRequest orderRequest);
 
+    Map<String, Object> getOrderDetails(Long orderId);
+
+
 
 }
